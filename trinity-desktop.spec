@@ -14,7 +14,7 @@
 
 Name:		trinity-desktop
 Version:	%{tde_version}
-Release:	1%{?dist}
+Release:	2
 Summary:	Meta-package to install TDE
 Group:		User Interface/Desktops
 URL:		http://www.trinitydesktop.org/
@@ -120,7 +120,7 @@ Requires: trinity-kdbg
 Requires: trinity-kdbusnotification
 Requires: trinity-kdiff3
 Requires: trinity-kdirstat
-#Requires: trinity-keep
+Requires: trinity-keep
 #Requires: trinity-kerberostray
 Requires: trinity-keximdb
 Requires: trinity-kftpgrabber
