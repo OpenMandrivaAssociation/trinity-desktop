@@ -14,7 +14,7 @@
 
 Name:		trinity-desktop
 Version:	%{tde_version}
-Release:	2
+Release:	3
 Summary:	Meta-package to install TDE
 Group:		User Interface/Desktops
 URL:		http://www.trinitydesktop.org/
@@ -229,6 +229,7 @@ Requires: trinity-twin-style-fahrenheit
 Requires: trinity-twin-style-machbunt
 Requires: trinity-twin-style-mallory
 Requires: trinity-twin-style-suse2
+Requires: trinity-xdg-desktop-portal-tde
 #Requires: trinity-wlassistant
 Requires: trinity-yakuake
 
