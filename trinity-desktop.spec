@@ -1,10 +1,7 @@
-#
-# Please submit bugfixes or comments via http://www.trinitydesktop.org/
-#
-
 %if "%{?tde_version}" == ""
 %define tde_version 14.1.5
 %endif
+%define pkg_rel 4
 
 # If TDE is built in a specific prefix (e.g. /opt/trinity), the release will be suffixed with ".opt".
 %if "%{?tde_prefix}" != "/usr"
@@ -14,29 +11,16 @@
 
 Name:		trinity-desktop
 Version:	%{tde_version}
-Release:	3
+Release:	%{pkg_rel}
 Summary:	Meta-package to install TDE
 Group:		User Interface/Desktops
 URL:		http://www.trinitydesktop.org/
 
-%if 0%{?suse_version}
-License:	GPL-2.0+
-%else
 License:	GPLv2+
-%endif
-
-Vendor:		Trinity Project
-Packager:	Francois Andriot <francois.andriot@free.fr>
 
 BuildArch:	noarch
 
-# Source0:	trinity-3.5.13-fedora.repo
-# Source1:	trinity-3.5.13-rhel.repo
-# Source2:	RPM-GPG-KEY-trinity
-
-%if 0%{?fedora} >= 32 || 0%{?mdkver} >= 5000000 || 0%{?mgaversion} >= 7 || 0%{?pclinuxos} || 0%{?rhel} >= 8 || 0%{?suse_version}
 #Requires:	pinentry-tqt
-%endif
 Requires:	trinity-tdeaccessibility >= %{version}
 Requires:	trinity-tdeaddons >= %{version}
 Requires:	trinity-tdeadmin >= %{version}
@@ -51,11 +35,6 @@ Requires:	trinity-tdenetwork >= %{version}
 Requires:	trinity-tdepim >= %{version}
 Requires:	trinity-tdetoys >= %{version}
 Requires:	trinity-tdeutils >= %{version}
-
-%if 0%{?rhel} || 0%{?fedora}
-# YUM configuration file
-Requires:	trinity-repo >= %{version}
-%endif
 
 %description
 The TDE project aims to keep the KDE3.5 computing style alive, as well as
@@ -112,25 +91,23 @@ Requires: trinity-kbiff
 Requires: trinity-kbookreader
 Requires: trinity-kchmviewer
 Requires: trinity-kcmautostart
-#Requires: trinity-kcmldap
-#Requires: trinity-kcmldapcontroller
-#Requires: trinity-kcmldapmanager
+# Requires: trinity-kcmldap
+# Requires: trinity-kcmldapcontroller
+# Requires: trinity-kcmldapmanager
 Requires: trinity-kcpuload
 Requires: trinity-kdbg
 Requires: trinity-kdbusnotification
 Requires: trinity-kdiff3
 Requires: trinity-kdirstat
 Requires: trinity-keep
-#Requires: trinity-kerberostray
+# Requires: trinity-kerberostray
 Requires: trinity-keximdb
 Requires: trinity-kftpgrabber
 Requires: trinity-kile
 Requires: trinity-kima
 Requires: trinity-kiosktool
 Requires: trinity-kkbswitch
-%if 0%{?fedora} || 0%{?mgaversion} >= 7 || 0%{?pclinuxos} || 0%{?rhel} >= 7 || 0%{?suse_version}
 Requires: trinity-klamav
-%endif
 Requires: trinity-klcddimmer
 Requires: trinity-kmplayer
 Requires: trinity-kmyfirewall
@@ -149,11 +126,7 @@ Requires: trinity-konversation
 Requires: trinity-kooldock
 Requires: trinity-kopete-otr
 Requires: trinity-kpicosim
-%if 0%{?sle_version} <= 150300 && 0%{?suse_version} != 1599 && 0%{?suse_version} != 1699
-%if 0%{?suse_version} || 0%{?mgaversion} || 0%{?mdkversion} || 0%{?pclinuxos} || 0%{?fedora} || 0%{?rhel} >= 6
-Requires: trinity-kpilot
-%endif
-%endif
+# Requires: trinity-kpilot
 Requires: trinity-kplayer
 Requires: trinity-krecipes
 Requires: trinity-krename
@@ -175,36 +148,28 @@ Requires: trinity-kxmleditor
 Requires: trinity-mathemagics
 Requires: trinity-mplayerthumbs
 Requires: trinity-piklab
-%if 0%{?suse_version} || 0%{?mgaversion} || 0%{?mdkversion} || 0%{?pclinuxos} || 0%{?fedora} || 0%{?rhel} >= 7
-# On RHEL6, polkit is too old
 Requires: trinity-polkit-agent-tde
-%endif
 Requires: trinity-potracegui
 Requires: trinity-qalculate-tde
-# On RHEL, lilypond is not available, so no rosegarden :'-(
-%if 0%{?suse_version} || 0%{?mgaversion} || 0%{?mdkversion} || 0%{?pclinuxos} || 0%{?fedora}
 Requires: trinity-rosegarden
-%endif
 Requires: trinity-smb4k
-#Requires: trinity-smartcardauth
+# Requires: trinity-smartcardauth
 Requires: trinity-soundkonverter
 Requires: trinity-tastymenu
 Requires: trinity-tdealternatives
 Requires: trinity-tdebluez
 Requires: trinity-tde-ebook-reader
-#Requires: trinity-tde-guidance
+# Requires: trinity-tde-guidance
 Requires: trinity-tde-style-baghira
 Requires: trinity-tde-style-domino
 Requires: trinity-tde-style-ia-ora
 Requires: trinity-tde-style-lipstik
 Requires: trinity-tde-style-polyester
 Requires: trinity-tde-style-qtcurve
-#Requires: trinity-tde-systemsettings
+# Requires: trinity-tde-systemsettings
 Requires: trinity-tdedocker
-%if 0%{?suse_version} || 0%{?mgaversion} || 0%{?mdkversion} || 0%{?pclinuxos} || 0%{?fedora} || 0%{?rhel} >= 7
 Requires: trinity-tdeio-appinfo
-%endif
-#Requires: trinity-tdeio-apt
+# Requires: trinity-tdeio-apt
 Requires: trinity-tdeio-ftps
 Requires: trinity-tdeio-gopher
 Requires: trinity-tdeio-locate
@@ -213,13 +178,12 @@ Requires: trinity-tdeio-umountwrapper
 Requires: trinity-tdeknighttour
 Requires: trinity-tdenetworkmanager
 Requires: trinity-tdepacman
-%if 0%{?rhel} != 5
 Requires: trinity-tdepowersave
-%endif
 Requires: trinity-tderadio
 Requires: trinity-tdesshaskpass
 Requires: trinity-tdesudo
 Requires: trinity-tdesvn
+Requires: trinity-tdexsldbg
 Requires: trinity-tdmtheme
 Requires: trinity-tellico
 Requires: trinity-tork
@@ -229,8 +193,9 @@ Requires: trinity-twin-style-fahrenheit
 Requires: trinity-twin-style-machbunt
 Requires: trinity-twin-style-mallory
 Requires: trinity-twin-style-suse2
+Requires: trinity-universal-indent-gui-tqt
 Requires: trinity-xdg-desktop-portal-tde
-#Requires: trinity-wlassistant
+# Requires: trinity-wlassistant
 Requires: trinity-yakuake
 
 # Power management
@@ -268,29 +233,6 @@ Requires:	%{name}-devel = %{version}
 
 %files all
 
-##########
-
-%if 0%{?rhel} || 0%{?fedora}
-%package -n trinity-repo
-Group:		User Interface/Desktops
-Summary:	Yum configuration files for Trinity
-Requires(pre):	coreutils
-
-%description -n trinity-repo
-%{summary}
-
-%pre -n trinity-repo
-# Make sure every Trinity related repository is deleted before installing new one.
-%__rm -f %{_sysconfdir}/yum.repos.d/trinity-*.repo
-
-%files -n trinity-repo
-%defattr(-,root,root,-)
-%{_sysconfdir}/yum.repos.d/*.repo
-%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-trinity
-%endif
-
-##########
-
 %prep
 
 
@@ -298,32 +240,4 @@ Requires(pre):	coreutils
 
 
 %install
-%__rm -rf %{?buildroot}
-%__mkdir_p "%{?buildroot}%{_sysconfdir}/yum.repos.d"
-
-# FEDORA configuration for YUM
-%if 0%{?fedora}
-%__sed %{SOURCE0} \
-  -e 's/\$releasever/%{fedora}/g' \
-  -e 's/-fedora/-f%{fedora}/g' \
-  >"%{?buildroot}%{_sysconfdir}/yum.repos.d/trinity.repo"
-%endif
-
-# RHEL configuration for YUM
-# $releasever is replaced with its value
-%if 0%{?rhel}
-%__sed %{SOURCE1} \
-  -e 's/\$releasever/%{rhel}/g' \
-  >"%{?buildroot}%{_sysconfdir}/yum.repos.d/trinity.repo"
-%endif
-
-%if 0%{?fedora} || 0%{?rhel}
-%__sed -i %{?buildroot}%{_sysconfdir}/yum.repos.d/*.repo -e "s|3.5.13|r14|g"
-%__chmod 644 %{?buildroot}%{_sysconfdir}/yum.repos.d/*.repo
-%endif
-
-# RPM signing key
-%if 0%{?rhel} || 0%{?fedora}
-%__install -D -m 644 "%{SOURCE2}" "%{?buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-trinity"
-%endif
 
