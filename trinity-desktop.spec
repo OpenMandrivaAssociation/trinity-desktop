@@ -1,7 +1,7 @@
 %if "%{?tde_version}" == ""
 %define tde_version 14.1.5
 %endif
-%define pkg_rel 4
+%define pkg_rel 5
 
 # If TDE is built in a specific prefix (e.g. /opt/trinity), the release will be suffixed with ".opt".
 %if "%{?tde_prefix}" != "/usr"
@@ -126,7 +126,6 @@ Requires: trinity-konversation
 Requires: trinity-kooldock
 Requires: trinity-kopete-otr
 Requires: trinity-kpicosim
-# Requires: trinity-kpilot
 Requires: trinity-kplayer
 Requires: trinity-krecipes
 Requires: trinity-krename
@@ -200,6 +199,9 @@ Requires: trinity-yakuake
 
 # Power management
 Obsoletes: trinity-tde-guidance-powermanager < %{?epoch:%{epoch}:}%{version}-%{release}
+
+# dependency has been deprecated
+Obsoletes: trinity-kpilot <= 0.7
 
 # Decoration-related stuff (not installed by default)
 #Requires: trinity-kgtk-qt3
