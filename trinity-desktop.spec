@@ -1,7 +1,7 @@
 %if "%{?tde_version}" == ""
 %define tde_version 14.1.5
 %endif
-%define pkg_rel 5
+%define pkg_rel 6
 
 # If TDE is built in a specific prefix (e.g. /opt/trinity), the release will be suffixed with ".opt".
 %if "%{?tde_prefix}" != "/usr"
@@ -158,14 +158,14 @@ Requires: trinity-tastymenu
 Requires: trinity-tdealternatives
 Requires: trinity-tdebluez
 Requires: trinity-tde-ebook-reader
-# Requires: trinity-tde-guidance
+Requires: trinity-tde-guidance
 Requires: trinity-tde-style-baghira
 Requires: trinity-tde-style-domino
 Requires: trinity-tde-style-ia-ora
 Requires: trinity-tde-style-lipstik
 Requires: trinity-tde-style-polyester
 Requires: trinity-tde-style-qtcurve
-# Requires: trinity-tde-systemsettings
+Requires: trinity-tde-systemsettings
 Requires: trinity-tdedocker
 Requires: trinity-tdeio-appinfo
 # Requires: trinity-tdeio-apt
