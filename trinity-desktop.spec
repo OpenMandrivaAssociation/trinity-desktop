@@ -1,8 +1,3 @@
-%if "%{?tde_version}" == ""
-%define tde_version 14.1.5
-%endif
-%define pkg_rel 6
-
 # If TDE is built in a specific prefix (e.g. /opt/trinity), the release will be suffixed with ".opt".
 %if "%{?tde_prefix}" != "/usr"
 %define _docdir %{_datadir}/doc
@@ -10,8 +5,8 @@
 %endif
 
 Name:		trinity-desktop
-Version:	%{tde_version}
-Release:	%{pkg_rel}
+Version:	14.1.5
+Release:	7
 Summary:	Meta-package to install TDE
 Group:		User Interface/Desktops
 URL:		http://www.trinitydesktop.org/
@@ -158,7 +153,7 @@ Requires: trinity-tastymenu
 Requires: trinity-tdealternatives
 Requires: trinity-tdebluez
 Requires: trinity-tde-ebook-reader
-Requires: trinity-tde-guidance
+# Requires: trinity-tde-guidance
 Requires: trinity-tde-style-baghira
 Requires: trinity-tde-style-domino
 Requires: trinity-tde-style-ia-ora
@@ -182,7 +177,7 @@ Requires: trinity-tderadio
 Requires: trinity-tdesshaskpass
 Requires: trinity-tdesudo
 Requires: trinity-tdesvn
-Requires: trinity-tdexsldbg
+# Requires: trinity-tdexsldbg
 Requires: trinity-tdmtheme
 Requires: trinity-tellico
 Requires: trinity-tork
@@ -198,7 +193,7 @@ Requires: trinity-xdg-desktop-portal-tde
 Requires: trinity-yakuake
 
 # Power management
-Obsoletes: trinity-tde-guidance-powermanager < %{?epoch:%{epoch}:}%{version}-%{release}
+Obsoletes: trinity-tde-guidance-powermanager < %{EVRD}
 
 # dependency has been deprecated
 Obsoletes: trinity-kpilot <= 0.7
