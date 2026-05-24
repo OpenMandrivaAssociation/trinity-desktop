@@ -5,8 +5,8 @@
 %endif
 
 Name:		trinity-desktop
-Version:	14.1.5
-Release:	7
+Version:	14.1.6
+Release:	1
 Summary:	Meta-package to install TDE
 Group:		User Interface/Desktops
 URL:		http://www.trinitydesktop.org/
@@ -153,7 +153,7 @@ Requires: trinity-tastymenu
 Requires: trinity-tdealternatives
 Requires: trinity-tdebluez
 Requires: trinity-tde-ebook-reader
-# Requires: trinity-tde-guidance
+Requires: trinity-tde-guidance
 Requires: trinity-tde-style-baghira
 Requires: trinity-tde-style-domino
 Requires: trinity-tde-style-ia-ora
@@ -177,7 +177,7 @@ Requires: trinity-tderadio
 Requires: trinity-tdesshaskpass
 Requires: trinity-tdesudo
 Requires: trinity-tdesvn
-# Requires: trinity-tdexsldbg
+Requires: trinity-tdexsldbg
 Requires: trinity-tdmtheme
 Requires: trinity-tellico
 Requires: trinity-tork
